@@ -54,6 +54,6 @@ $ python accuracy.py
 
 ### Demo2: https://youtu.be/9RoBEYkMOd4
 
-[![demo2](demo2.gif =640x360)](https://youtu.be/9RoBEYkMOd4)
+[![demo2](demo2.gif)](https://youtu.be/9RoBEYkMOd4)
 
 [Trần Minh Tiến]: <https://github.com/fantashi099>
