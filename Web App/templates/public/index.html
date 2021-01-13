@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>VieSound</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/styles.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital@1&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.2.0/p5.min.js" integrity="sha512-b/htz6gIyFi3dwSoZ0Uv3cuv3Ony7EeKkacgrcVg8CMzu90n777qveu0PBcbZUA7TzyENGtU+qZRuFAkfqgyoQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.2.0/addons/p5.sound.js" integrity="sha512-KxzVm+IqxNNq0+SzT/zzd5PHxY4LPrN+v5gZJ6+JKqjeU3Cr4y/djAg5eNlKDWurn1SeKZpql/yeOMWblMSzOg==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+  </head>
+  <body>
+    <header>
+      <a class="logo" href="#">
+        <img class="logo-img" src="{{ url_for('static',filename='images/main-logo.png') }}" alt="logo">
+      </a>
+      <nav>
+        <ul class="nav_link">
+          <li><a>Home</a></li>
+          <li><a href="#About">About</a></li>
+          <li><a>Member</a></li>
+          <li><a>Terms of Use</a></li>
+        </ul>
+      </nav>
+    </header>
+    <section id="main">
+      <img src="{{ url_for('static',filename='images/VieSound-large.png') }}" alt="VieSound">
+      <form action="/search" method="post">
+        <div>
+          <div onclick="$('#file-sound').trigger('click');" class="file-upload" data-text="Select your file!">
+            <i class="fa fa-arrow-up"></i>
+          </div>
+          <div class="record-button" onclick="openModal()">
+            <i class="fas fa-microphone"></i>
+          </div>
+        </div>
+
+        <div class="modal" id="record-modal">
+					<div class="modal-content">
+            <span class="close">&times;</span>
+            <button class="btn-record" onclick="start_record()" type="button" id="start-record">Record</button>
+            <button class="btn-record" onclick="stop_record()" type="button" id="stop-record">Stop</button>
+            <button class="btn-record" onclick="play_record()" type="button" id="play-record">Play</button>
+					</div>
+				</div>
+
+        <div class="drop-container">
+          <input name="file_sound" onchange="readURL(this)" type="file" id="file-sound" accept=".mp3, .wav">
+          <p id="dropzone">
+            Drag a song or click button above...
+          </p>
+        </div>
+        <div style="padding: 40px;">
+          <a class="cta" onclick="send_data();">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            Search
+          </a>
+        </div>
+
+      </form>
+    </section>
+
+    <section id="retrieval">
+      <div class="row">
+
+        <div class="column-left">
+          <h2>Bài hát bạn đang tìm kiếm:</h2>
+          <div class="row container">
+            <div class="cover">
+              <img id="rank1-img" class="cover-img" src="" alt="cover-img">
+            </div>
+            <div class="title">
+              <h3 id="rank1-title">Title here</h3>
+              <p id="rank1-singer">Singer here</p>
+              <a id="rank1-link">Link here</a>
+              <audio id="audio1" controls>
+                <source id="rank1-song" src="" type="audio/mpeg">
+                Your browser does not support the audio format.
+              </audio>
+            </div>
+          </div>
+          <div class="container lyrics" style="padding: 1rem;">
+            <p>Lyrics</p>
+          </div>
+        </div>
+
+        <div class="column">
+        </div>
+
+        <div class="column-right">
+          <h2>Có thể bạn cũng thích:</h2>
+          <div class="row container">
+            <div class="cover">
+              <img id="rank2-img" class="cover-img" src="" alt="cover-img">
+            </div>
+            <div class="title">
+              <h3 id="rank2-title">Title here</h3>
+              <p id="rank2-singer">Singer here</p>
+              <a id="rank2-link">Link here</a>
+              <audio id="audio2" controls>
+                <source id="rank2-song" src="" type="audio/mpeg">
+                Your browser does not support the audio format.
+              </audio>
+            </div>
+          </div>
+
+          <div class="row container">
+            <div class="cover">
+              <img id="rank3-img" class="cover-img" src="" alt="cover-img">
+            </div>
+            <div class="title">
+              <h3 id="rank3-title">Title here</h3>
+              <p id="rank3-singer">Singer here</p>
+              <a id="rank3-link">Link here</a>
+              <!-- <audio id="audio3" controls>
+                <source id="rank3-song" src="" type="audio/mpeg">
+                Your browser does not support the audio format.
+              </audio> -->
+            </div>
+          </div>
+
+          <div class="row container">
+            <div class="cover">
+              <img id="rank4-img" class="cover-img" src="" alt="cover-img">
+            </div>
+            <div class="title">
+              <h3 id="rank4-title">Title here</h3>
+              <p id="rank4-singer">Singer here</p>
+              <a id="rank4-link">Link here</a>
+              <!-- <audio id="audio4" controls>
+                <source id="rank4-song" src="" type="audio/mpeg">
+                Your browser does not support the audio format.
+              </audio> -->
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="info">
+      <h1>VieSound</h1>
+      <p>Đây là lời giới thiệu.</p>
+    </section>
+
+    <footer>
+      <p>Designed with ❤ by <a href="https://github.com/fantashi099">The Perfect Name</a></p>
+      <!-- <p><a href="https://github.com/fantashi099">The Perfect Name</a> | Trần Xuân Hưng | Trần Ngọc Chính | Nguyễn Phước Bình</p> -->
+    </footer>
+
+    <div id="retrieval-loading"> </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="{{ url_for('static',filename='js/index.js') }}" charset="utf-8"></script>
+  </body>
+</html>

@@ -1,0 +1,406 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+    height: 100%;
+    background-color: #121640;
+}
+
+h1, h2, h3 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  color: #00C4CC;
+}
+
+li, a, p, button{
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  color: white;
+  text-decoration: none;
+}
+
+/* Header */
+header a {
+  color:  #393e46;
+}
+
+header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 10px 10%;
+  background-color: #eeeeee;
+}
+
+.logo {
+  cursor: pointer;
+  margin-right: auto;
+}
+
+.logo-img {
+  width: 12%;
+  height: 12%;
+}
+
+.logo span {
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 1.5rem;
+}
+
+.nav_link {
+  list-style: none;
+}
+
+.nav_link li {
+  display: inline-block;
+  padding: 0px 20px;
+}
+
+.nav_link li a {
+  transition: all 0.3s ease 0s;
+}
+
+.nav_link li a:hover {
+  color: #00adb5;
+}
+
+/* VieSound Logo */
+#main {
+  margin-top: 2rem;
+}
+
+#main p {
+  color:  #393e46;
+}
+
+#main img {
+  width: 35%;
+  height: 35%;
+}
+
+/* Main */
+/* Upload button */
+.file-upload{
+
+    height:4rem;
+    width:4rem;
+    border-radius: 100px;
+    position:relative;
+    left: 42rem;
+    top: 2rem;
+
+    display:flex;
+    justify-content:center;
+    align-items: center;
+
+    border: 4px solid #FFFFFF;
+    background-image: linear-gradient(to bottom, #00C4CC 50%, #FFFFFF 50%);
+    background-size: 100% 200%;
+    transition: all 1s;
+    color: #FFFFFF;
+    /* Set size inside div */
+    font-size:2rem;
+    cursor:pointer;
+}
+
+
+.file-upload:hover {
+  background-position: 0 -100%;
+  color:#00C4CC;
+}
+
+.record-button {
+  height:4rem;
+  width:4rem;
+  border-radius: 100px;
+  position:absolute;
+  left: 47rem;
+  top: 25.5rem;
+
+  display:flex;
+  justify-content:center;
+  align-items: center;
+
+  border: 4px solid #FFFFFF;
+  background-image: linear-gradient(to bottom, #00C4CC 50%, #FFFFFF 50%);
+  background-size: 100% 200%;
+  transition: all 1s;
+  color: #FFFFFF;
+  /* Set size inside div */
+  font-size:2rem;
+  cursor:pointer;
+}
+
+.record-button:hover {
+  background-position: 0 -100%;
+  color:#00C4CC;
+}
+
+
+#file-sound {
+  height:10rem;
+  width:38rem;
+  position:absolute;
+  left: 0;
+  opacity:0;
+}
+
+
+/* Drag file here */
+#dropzone {
+  margin-top: 3rem;
+  padding: 20px;
+  border-style: dashed;
+  font-size: 36pt;
+}
+
+.drop-container {
+  position: relative;
+  left: 28.5rem;
+  width: 40%;
+}
+
+.drop-container:hover {
+  background-color: #4C0BD1;
+}
+
+/* Seach Neon Buttton */
+.cta {
+  padding: 9px 25px;
+  position: relative;
+  display: inline-block;
+  color: #00adb5;
+  letter-spacing: 2px;
+  text-decoration: none;
+  overflow: hidden;
+  transition: 0.2s;
+}
+
+.cta:hover {
+  color: #fff;
+  background: #150485;
+  box-shadow: 0 0 10px #c62a88, 0 0 40px #c62a88, 0 0 80px #c62a88;
+  transition-delay: 1s;
+}
+
+.cta span {
+  position: absolute;
+  display: block;
+}
+
+/* First light top */
+.cta span:nth-child(1) {
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg,transparent,#c62a88);
+}
+
+.cta:hover span:nth-child(1) {
+  left: 100%;
+  transition: 1s;
+}
+
+/* Light bottom */
+.cta span:nth-child(3) {
+  bottom: 0;
+  right: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(270deg,transparent,#c62a88);
+}
+
+.cta:hover span:nth-child(3) {
+  right: 100%;
+  transition: 1s;
+  transition-delay: 0.5s;
+}
+
+/* Light right */
+.cta span:nth-child(2) {
+  top: -100%;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg,transparent,#c62a88);
+}
+
+.cta:hover span:nth-child(2) {
+  top: 100%;
+  transition: 1s;
+  transition-delay: 0.25s;
+}
+
+/* Light left */
+.cta span:nth-child(4) {
+  bottom: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(360deg,transparent,#c62a88);
+}
+
+.cta:hover span:nth-child(4) {
+  bottom: 100%;
+  transition: 1s;
+  transition-delay: 0.75s;
+}
+
+/* Retrieval */
+#retrieval {
+  margin: 4rem 4rem 2rem 8rem;
+  display: none;
+}
+
+#retrieval h2 {
+  margin-bottom: 2rem;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.container {
+  border: 1px solid #fff;
+  border-radius: 10px;
+  text-align: left;
+}
+
+.column-left, .column-right {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  flex: 2;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  flex: 1;
+}
+
+.cover {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  flex: 1;
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  flex: 3;
+  margin-left: 1rem;
+  line-height: 150%;
+}
+
+.title audio {
+  width: 95%;
+}
+
+.cover-img {
+  border-radius: 10%;
+  border-right: 1px solid #fff;
+  width: 100%;
+  height: 100%;
+}
+
+/* Info */
+#info {
+  padding: 20px;
+}
+
+
+/* Footer */
+body {
+  min-height: 100vh;
+  text-align: center;
+}
+
+footer {
+  background-color: #222831;
+  padding: 20px;
+  clear: both;
+  position: relative;
+  width: 100%;
+  line-height: 150%;
+}
+
+footer a {
+  color: #00C4CC;
+}
+
+/* Loading page */
+#retrieval-loading {
+	display:    none;
+	position:   absolute;
+	z-index:    100;
+	top:        0;
+	left:       0;
+	height:     100vh;
+	width:      100vw;
+	background: rgba( 255, 255, 255, .2 )
+							url("pixel.gif")
+							50% 50%
+							no-repeat;
+}
+
+/* The Modal (background) */
+.modal {
+	display: none; /* Hidden by default */
+	position: fixed; /* Stay in place */
+	z-index: 1; /* Sit on top */
+	padding-top: 15rem; /* Location of the box */
+	left: 0;
+	top: 0;
+	width: 100%; /* Full width */
+	height: 100%; /* Full height */
+	overflow: auto; /* Enable scroll if needed */
+	background-color: rgb(0,0,0); /* Fallback color */
+	background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+	background-color: #fefefe;
+	margin: auto;
+	padding: 20px;
+	border: 1px solid #888;
+	width: 30%;
+  text-align: center;
+}
+
+/* The Close Button */
+.close {
+	color: #aaaaaa;
+	float: right;
+	font-size: 28px;
+	font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+	color: #000;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.btn-record {
+  background-color: #00C4CC;
+  display: inline-block;
+  border-radius: 8px;
+  padding: 10px;
+  margin: 0 15px 0;
+}
