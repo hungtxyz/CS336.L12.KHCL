@@ -48,4 +48,9 @@ To check accuracy, use this:
 $ python accuracy.py
 ```
 
+### Demo:
+
+[![demo1](demo1.gif)](https://youtu.be/V_HZi6CDHRs)
+[![demo2](demo2.gif)](https://youtu.be/9RoBEYkMOd4)
+
 [Trần Minh Tiến]: <https://github.com/fantashi099>
