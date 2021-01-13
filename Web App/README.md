@@ -4,9 +4,9 @@
 
 ### Members:
 * [Trần Minh Tiến] - 18521492
-* [Trần Xuân Hưng] - 18520286
-* [Trần Ngọc Chính] - 18520534
-* [Nguyễn Phước Bình] - 18520507
+* Trần Xuân Hưng - 18520286
+* Trần Ngọc Chính - 18520534
+* Nguyễn Phước Bình - 18520507
 
 ### Requires for Window User:
 
@@ -54,6 +54,6 @@ $ python accuracy.py
 
 ### Demo2: https://youtu.be/9RoBEYkMOd4
 
-[![demo2](demo2.gif)](https://youtu.be/9RoBEYkMOd4)
+[![demo2](demo2.gif =640x360)](https://youtu.be/9RoBEYkMOd4)
 
 [Trần Minh Tiến]: <https://github.com/fantashi099>
