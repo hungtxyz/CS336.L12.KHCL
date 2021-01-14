@@ -1,0 +1,6 @@
+Flask>=1.1.2
+Werkzeug>=1.0.1
+opencv-python>=4.4.0.46
+numba>=0.52.0
+scipy>=1.5.4
+numpy>=1.19.4
