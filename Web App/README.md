@@ -40,7 +40,7 @@ $ python app.py
 
 To crawl data, use this:
 ```sh
-$ python ./Music/Crawler/crawler.py
+$ python crawler.py
 ```
 
 To check accuracy, use this:
